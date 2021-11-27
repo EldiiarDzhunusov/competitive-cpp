@@ -225,6 +225,45 @@ int countGoodSubstrings(string s) {
     }
     return ans;
 }
+vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
+    vector<int> ans(nums1.size());
+    for (int i = 0; i < nums1.size(); i++) {
+        int index = -1;
+        for (int j = 0; j < nums2.size(); j++) {
+
+        }
+        
+    }
+}
+int smallestEqual(vector<int>& nums) {
+    for (int i = 0; i < nums.size(); i++) {
+      if(i%10==nums[i]){
+          return i;
+      }
+    }
+    return -1;
+}
+string mergeAlternately(string word1, string word2) {
+    int i =0;
+    int j =0;
+    string ans ="";
+    int index = 0;
+    while(i<word1.size() && j<word2.size()){
+        if(index%2==0){
+            ans+=word1[i++];
+        }else{
+            ans+=word2[j++];
+        }
+        index++;
+    }
+    while(i<word1.size()){
+        ans+=word1[i++];
+    }
+    while(j<word2.size()){
+        ans+=word2[j++];
+    }
+    return ans;
+}
 int main(){
     cout<<(10 % 2 == 1)<<endl;
     vector<int> x = countBits(10);

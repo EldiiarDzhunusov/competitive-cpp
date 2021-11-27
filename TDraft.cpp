@@ -204,25 +204,22 @@ vector<int> countBits(int n) {
     }
     return vec;
 }
-vector<int> sortByBits(vector<int>& arr) {
-    vector<vector<int>> v1(arr.size(),vector<int> (2, 0));
-    for (int i = 0; i < arr.size(); i++) {
-        v1[i][0] = __builtin_popcount(arr[i]);
-        v1[i][1] = arr[i];
+int minOperations(vector<int>& nums) {
+    int ans = 0;
+    for (int i = 1; i < nums.size(); i++) {
+        if(nums[i]<=nums[i-1]){
+            ans+=nums[i-1]-nums[i]+1;
+            nums[i]+= nums[i-1]-nums[i]+1;
+        }
     }
-    sort(v1.begin(),v1.end());
-    for (int i = 0; i < arr.size(); i++) {
-        arr[i] = v1[i][1];
-    }
-    return arr;
+//    cout<<to_string(nums)<<endl;
+    return ans;
 }
 int main(){
-    cout<<(10 % 2 == 1)<<endl;
-    vector<int> x = countBits(10);
-    for( auto b: x){
-        cout<<b<<" ";
-    }
-    cout<<endl;
+    vector<int> arr{1,6,4};
+    int a = *(max_element(arr.begin(),arr.end())+1);
+    cout<<a<<endl;
+
 
 }
 

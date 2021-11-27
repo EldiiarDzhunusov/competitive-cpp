@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#define ll long long
 using namespace std;
 int gcd(int a, int b)
 {
@@ -42,27 +43,7 @@ string to_string(vector<vector<int>> v1){
 }
 
 void solve(){
-    long long k,x;
-    long long counter =0;
-    cin>>k>>x;
-    for (int i = 1; i <= k; i++) {
-        counter++;
-        if((i*(i+1))/2>=x){
-            cout<<i<<endl;
-            return;
-        }
-    }
-    long long sum1 = (k*(k+1))/2;
-    for (int i = k-1; i >= 1; i--) {
-        sum1+=i;
-        counter++;
-        if(sum1>=x){
-            cout<<counter<<endl;
-            return;
-        }
-
-    }
-    cout<<counter<<endl;
+    //insert your code here
 }
 
 
