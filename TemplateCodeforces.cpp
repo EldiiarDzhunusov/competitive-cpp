@@ -2,13 +2,9 @@
 #define ll long long
 using namespace std;
 
-int gcd(int a, int b) {if (b == 0) return a;    return gcd(b , a%b);}
-long gcd(long a, long b){ if (b == 0) return a;  return gcd(b , a%b);}
-long long gcd(long long a, long long b){ if (b == 0) return a;  return gcd(b , a%b);}
-string to_string(vector<int> v1){bool isFirst = true;string ans = "["; for (int i = 0; i < v1.size(); i++) { if(isFirst){ ans+= to_string(v1[i]); isFirst= false; }else{ ans+=", "+ to_string(v1[i]); }} ans+="]"; return ans;}
-string to_string(vector<vector<int>> v1){ bool isFirst = true; string ans = "["; for (int i = 0; i < v1.size(); i++) { if(isFirst){ ans+= to_string(v1[i]); isFirst= false;}else{ ans+=", "+ to_string(v1[i]);}} ans+="]"; return ans;}
-string to_string(vector<long long> v1){ bool isFirst = true; string ans = "["; for (int i = 0; i < v1.size(); i++) { if(isFirst){ ans+= to_string(v1[i]);isFirst= false;}else{ ans+=", "+ to_string(v1[i]);}} ans+="]"; return ans;}
-string to_string(vector<vector<long long>> v1){ bool isFirst = true; string ans = "["; for (int i = 0; i < v1.size(); i++) { if(isFirst){ ans+= to_string(v1[i]); isFirst= false;}else{ ans+=", "+ to_string(v1[i]);}} ans+="]"; return ans;}
+string to_string(vector<bool> v) { bool first = true; string res = "["; for (int i = 0; i < static_cast<int>(v.size()); i++) {if (!first) { res += ", ";} first = false; res += to_string(v[i]);} res += "]"; return res;}
+template <typename A>
+string to_string(A v) { bool first = true; string res = "["; for (const auto &x : v) { if (!first) {res += ", "; } first = false; res += to_string(x);} res += "]"; return res;}
 
 void solve(){
     //insert your code here

@@ -1,107 +1,35 @@
 #include <bits/stdc++.h>
 #define ll long long
 using namespace std;
-int gcd(int a, int b)
-{
-    if (b == 0)
-        return a;
-    return gcd(b , a%b);
-}
-long gcd(long a, long b)
-{
-    if (b == 0)
-        return a;
-    return gcd(b , a%b);
-}
-string to_string(vector<int> v1){
-    bool isFirst = true;
-    string ans = "[";
-    for (int i = 0; i < v1.size(); i++) {
-        if(isFirst){
-            ans+= to_string(v1[i]);
-            isFirst= false;
-        }else{
-            ans+=", "+ to_string(v1[i]);
-        }
-    }
-    ans+="]";
-    return ans;
-}
-string to_string(vector<vector<int>> v1){
-    bool isFirst = true;
-    string ans = "[";
-    for (int i = 0; i < v1.size(); i++) {
-        if(isFirst){
-            ans+= to_string(v1[i]);
-            isFirst= false;
-        }else{
-            ans+=", "+ to_string(v1[i]);
-        }
-    }
-    ans+="]";
-    return ans;
-}
-string to_string(vector<long long> v1){
-    bool isFirst = true;
-    string ans = "[";
-    for (int i = 0; i < v1.size(); i++) {
-        if(isFirst){
-            ans+= to_string(v1[i]);
-            isFirst= false;
-        }else{
-            ans+=", "+ to_string(v1[i]);
-        }
-    }
-    ans+="]";
-    return ans;
-}
+
+string to_string(vector<bool> v) { bool first = true; string res = "["; for (int i = 0; i < static_cast<int>(v.size()); i++) {if (!first) { res += ", ";} first = false; res += to_string(v[i]);} res += "]"; return res;}
+template <typename A>
+string to_string(A v) { bool first = true; string res = "["; for (const auto &x : v) { if (!first) {res += ", "; } first = false; res += to_string(x);} res += "]"; return res;}
 
 void solve(){
-    int n; cin>>n;
-    vector<vector<ll>> v1(n+1 , vector<ll> (2, 0));
-    for (int i = 1; i <=n ; i++) {
-        cin>>v1[i][0]; v1[i][1] = i;
+    //insert your code here
+    int n,m; cin>>n>>m;
+
+    vector<vector<int>> events(m*2,vector<int>(2));
+    for (int i = 0; i < m; i+=2) {
+        cin>>events[i][0];
+        events[i][1]=-1;
+        cin>>events[i+1][0];
+        events[i+1][1]= 1;
     }
-    map<ll,ll> map1; //stores index and their coordinate
-    map1[0] = 0;
-    sort(v1.begin(),v1.end());
-    reverse(v1.begin(),v1.end());
-//    cout<<to_string(v1)<<endl;
-    ll l = -1;
-    ll r = 1;
-    ll  ans = 0;
-    for (ll i = 0; i < n + 1; i++) {
-        if(i==n){
-            map1[0] = 0;
-        }
-        else if(abs(l)<r){
-            ans+=abs(l)*2 *v1[i][0];
-            map1[v1[i][1]] = l--;
-        }else{
-            ans+=abs(r)*2 *v1[i][0];
-            map1[v1[i][1]]= r++;
-        }
-    }
-//    cout<<"map: "<<endl;
-//    for(auto x: map1){
-//        cout<<x.first<<" " <<x.second<<endl;
-//    }
-//    cout<<endl;
-    cout<<ans<<endl;
-    for (ll i = 0; i < n + 1; i++) {
-        cout<<map1[i]<<" ";
-    }
-    cout<<endl;
+    std::sort(events.begin(), events.end());
+
+
 
 }
 
 
 int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0);
+    ios::sync_with_stdio(false); cin.tie(0);
     long t = 1;
-    cin>>t;
+//    cin>>t;
     for (int i = 1; i <= t; i++) {
+//        cout<<"Case #"<<i<<+": ";
         solve();
     }
 }
