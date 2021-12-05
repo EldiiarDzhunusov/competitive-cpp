@@ -7,7 +7,6 @@ string to_string(A v) { bool first = true; string res = "["; for (const auto &x 
 
 
 int main(){
- bitset<10> bs("0111");
- cout<<bs<<endl;
+    cout<< 7%3;
 
 }
