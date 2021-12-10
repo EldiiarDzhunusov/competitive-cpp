@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-typedef long long ll;
+#define ll long long
 using namespace std;
 
 string to_string(vector<bool> v) { bool first = true; string res = "["; for (int i = 0; i < static_cast<int>(v.size()); i++) {if (!first) { res += ", ";} first = false; res += to_string(v[i]);} res += "]"; return res;}
@@ -8,12 +8,6 @@ string to_string(A v) { bool first = true; string res = "["; for (const auto &x 
 
 void solve(){
     //insert your code here
-    int n; cin>>n;
-    vector<int> v1(n);
-    for (int i = 0; i < n; i++) {
-        cin>>v1[i];
-    }
-
 
 }
 
