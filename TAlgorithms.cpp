@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+///////// Binary Search //////////////
 bool checkerForBinarySearch(vector<long long> &v1, long long num){
     //check for binary search if the selected number works
     //Not implemented yet
@@ -36,7 +37,7 @@ long long rBinSearch(long long l, long long r, vector<long long> &v1){
     return l;
 }
 
-//Segment Tree
+///////// Segment Tree //////////////
 
 const int N = 1e5+5;
 const int inf = 1e9+5;
